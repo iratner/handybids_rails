@@ -1,4 +1,4 @@
-class Api::V1::ProjectsController < InheritedResources::Base
+class Api::V1::EstimatesController < InheritedResources::Base
   #before_filter :authenticate_user!
   skip_before_filter :verify_authenticity_token
   respond_to :json
@@ -16,7 +16,12 @@ class Api::V1::ProjectsController < InheritedResources::Base
     show! { resource.to_json}
   end
   
-
+  
+  #protected
+  #  def begin_of_association_chain
+  #    current_user
+  #  end
+  
   private
 	def permitted_params
 		params.permit(project: [:name, :description, :video, :status, :category,
