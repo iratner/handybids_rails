@@ -1,0 +1,4 @@
+<% if current_contractor.present? %>
+  <%= link_to "Sign Out", destroy_contractor_session_path, method: "delete" %>
+<% end %>
+<br />
