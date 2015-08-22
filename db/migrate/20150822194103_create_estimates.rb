@@ -1,8 +1,8 @@
-class CreateBids < ActiveRecord::Migration
+class CreateEstimates < ActiveRecord::Migration
   def change
-    create_table :bids do |t|
+    create_table :estimates do |t|
       t.integer :contracter_id
-      t.integer :amount
+      t.text :range
       t.text :description
 
       t.timestamps null: false

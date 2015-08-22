@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  contracter_id: 1
+  range: MyText
+  description: MyText
+
+two:
+  contracter_id: 1
+  range: MyText
+  description: MyText
