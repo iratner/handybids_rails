@@ -2,7 +2,7 @@ This is the projects list:
 
 <ul>
 <% collection.each do | proj | %>
-  <li><%= proj.name %></li>
+  <li><%= link_to proj.name, project_path(proj) %></li>
 <% end %>
 </ul>
 
