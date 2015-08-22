@@ -1,0 +1,29 @@
+<% if flash.present? %>
+  <div class="row hidden-print">
+    <% flash.each do |type, messages| %>
+      <div class="alert alert-dismissable <%= {success: 'alert-success', error: 'alert-danger', alert: 'alert-warning', notice: 'alert-success' }[type.to_sym] || type.to_s %>">
+        <button class="close" data-dismiss="alert">
+          <span aria-hidden="true">×</span>
+          <span class="sr-only">Close</span>
+        </button>
+        <% ((messages.is_a? Array) ? messages : [messages]).each do |message| %>
+          <%= message.html_safe %><br />
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+<%end%>
+
+<% if get_resource.present? and get_resource.errors.present? %>
+	<div class="row hidden-print">
+		<% resource.errors.full_messages.each do |message| %>
+			<div class="alert alert-dismissable alert-danger">
+			  <button class="close" data-dismiss="alert">
+				<span aria-hidden="true">×</span>
+				<span class="sr-only">Close</span>
+			  </button>
+			  <%= message %>
+			</div>
+		<% end %>
+	</div>
+<% end %>

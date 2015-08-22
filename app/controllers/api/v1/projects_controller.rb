@@ -16,12 +16,7 @@ class Api::V1::ProjectsController < InheritedResources::Base
     show! { resource.to_json}
   end
   
-  
-  #protected
-  #  def begin_of_association_chain
-  #    current_user
-  #  end
-  
+
   private
 	def permitted_params
 		params.permit(project: [:name, :description, :video, :status, :category,

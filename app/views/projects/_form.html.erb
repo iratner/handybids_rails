@@ -1,0 +1,7 @@
+<%= bootstrap_form_for resource do | f |%>
+  <%= f.file_field :video %>
+  <%= f.text_field :name %>
+  <%= f.text_field :category %>
+  <%= f.text_area :description, :rows => '5' %> 
+  <%= f.submit 'Add Project' %>
+<% end  %>
