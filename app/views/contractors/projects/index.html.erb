@@ -1,0 +1,6 @@
+<ul>
+<% collection.where(status: "Open").each do | proj | %>
+  <li><%= link_to proj.name, contractors_project_path(proj) %></li>
+<% end %>
+</ul>
+
