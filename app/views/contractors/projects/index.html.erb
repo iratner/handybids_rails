@@ -1,0 +1,5 @@
+# of Projects: <%= @projects.count %>
+<% @projects.each do |proj| %>
+  <div><%= proj.name %> | <%= proj.updated_at %></div>
+
+<% end %>

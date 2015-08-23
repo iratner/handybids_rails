@@ -4,11 +4,11 @@ Rails.application.routes.draw do
 
   namespace :contractors do
     root to: 'dashboard#index'
+    resources :projects, except: [:create, :new, :destroy]
   end
-  
+
   root to: 'dashboard#index'
-  
-  
+
   namespace :api do
     namespace :v1 do
       resources :projects
