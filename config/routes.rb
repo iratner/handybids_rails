@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   namespace :contractors do
     root to: 'dashboard#index'
-    resources :projects
+    resources :projects do
+      resources :estimates
+    end
   end
   
   root to: 'dashboard#index'
