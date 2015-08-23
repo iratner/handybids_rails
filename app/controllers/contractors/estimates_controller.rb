@@ -8,7 +8,6 @@ class Contractors::EstimatesController < InheritedResources::Base
       resource.save
       contractors_projects_path 
     }
-    
   end
   
   protected
