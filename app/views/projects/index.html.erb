@@ -1,17 +1,39 @@
 <div id="projects" class="wrapper">
      <div class="row header">
          <div class="title">Projects</div>
-         <%= link_to new_project_path() do %>
+         <%= link_to new_project_path(), :class=>'wtf' do %>
             <i class="add-button fa fa-plus"></i>
          <% end %>
      </div>
      <div class="body">
+         
         <% if collection.empty?  %>
           <p>No projects added. Tap + to begin creating a project</p>
           <% else %>
-           <% collection.each do | proj | %>
-              <%= link_to proj.name, project_path(proj) %>
-           <% end %>
+              <div class="project-list">
+                  <% collection.each do | proj | %>
+                    <%= link_to project_path(proj) do %>
+                      <div class="project-snapshot">
+                          <span class="project-thumbnail project-cell">
+                            <%= image_tag(proj.video.video_thumbnail)  %>
+                          </span>
+                          <span class="project-text project-cell">
+                              <div class="project-name"><%= proj.name %> </div>
+                              <div class="project-status ">
+                                  <span class="label">Status:</span>
+                                  <span class="status-status status-detail"><%= proj.status %></span>
+                                  <span class="status-dash status-detail">-</span>
+                                  <span class="status-number status-detail"><%= proj.estimates.count %></span>
+                                  <span class="status-text status-detail">Estimates</span>
+                              </div>
+                          </span>
+                          <span class="project-goto project-cell">
+                              <i class="fa fa-chevron-right"></i>
+                          </span>
+                      </div>
+                    <% end %>
+                   <% end %>
+              </div>
          <% end %>
      </div>
      <div class="footer row">

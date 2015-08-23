@@ -25,7 +25,7 @@ body {
     z-index: 1;
     /*font-size: 16px;*/
     top: 0px;
-    padding-top: 120px;
+    padding-top: 4em;
 }
 
 .row.footer {
@@ -310,4 +310,78 @@ body {
     left: 10px;
     color: white;
     top: 1em;
+}
+
+.project-snapshot {
+    height: 4em;
+    width: 95%;
+    margin: 10px auto;
+    background-color: #e5edef;
+    /*display: flex;*/
+    /*flex-direction: row;*/
+    position: relative;
+}
+
+.project-status {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.project-status .label {
+    color: gray;
+    font-size: .8em;
+    padding: 0;
+    font-weight: 100;
+}
+
+.project-thumbnail {
+    width: 4em;
+    height: 4em;
+    background-color: #CFE3E8;
+    padding: 5px;
+    overflow:hidden;
+}
+
+.project-text {
+    width: 75%;
+    padding: 5px 10px;
+}
+
+.status-detail {
+    color: #2ECC2E;
+}
+
+.status-status {
+    font-weight: bold;
+}
+
+.ended .status-detail {
+    color: gray;
+}
+
+.project-goto.project-cell {
+    /* height: 100%; */
+    width: 25px;
+    /* top: 1em; */
+    position: absolute;
+    line-height: 4em;
+    color: #88B1BB;
+    top: 0;
+}
+
+.project-cell {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.no-project {
+    margin-top: 5em;
+}
+
+#project-detail .project-snapshot {
+    width: 100%;
+    margin: 0 0 5px 0;
+}
+
+.wtf{
+    line-height: 12px
 }
