@@ -6,7 +6,7 @@
          <% end %>
      </div>
      <div class="body">
-         
+         <%= render 'layouts/flash' %>
         <% if collection.empty?  %>
           <p>No projects added. Tap <%= link_to "Here", new_project_path() %> to begin creating a project</p>
           <% else %>

@@ -1,9 +1,10 @@
 <%= form_for resource do | f |%>
      <div id="confirm-project" class="wrapper">
          <div class="row header">
-             <span class="cancel-btn"></span><div class="title">My Project</div>
+             <%= link_to "back", projects_path, :class => "cancel-btn" %><div class="title">My Project</div>
          </div>
          <div class="body">
+             <%= render 'layouts/flash' %>
              <div class="project-media p-section">
                  <h4>Media</h4>
                  <%= f.file_field :video, :class => 'inactive' %>
@@ -23,7 +24,7 @@
              </div>
          </div>
          <div class="footer row">
-              <%= f.submit 'Add Project' %>
+              <%= f.submit 'Add Project', :class =>'add-project-button' %>
          </div>
      </div>
 
