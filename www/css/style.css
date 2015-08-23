@@ -426,10 +426,31 @@ body {
 .project-estimate {
     padding: 10px 0;
     border-bottom: 1px dotted #D8D7D7;
+    height: 170px;
+    position: relative;
 }
 
 .c-comments a {
     color: #36C0DD;
     margin-left: 5px;
     text-decoration: none;
+}
+
+.contractor-misc-images {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+
+}
+
+.contractor-misc-images .fa-chevron-right {
+    position: absolute;
+    top: 35%;
+    right: 0;
+    padding-right: 15px;
+}
+
+.star {
+    padding-right: 15px;
 }
