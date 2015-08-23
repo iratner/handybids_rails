@@ -12,3 +12,21 @@ Project details:
 <li>Created: <%= resource.created_at %></li>
 <li>Last updated: <%= resource.updated_at %></li>
 </ul>
+
+
+<br />
+Estimates
+<%= resource.estimates.count %> 
+
+<% resource.estimates.each do | e | %>
+  <div>
+  <%= e.contractor.name %>
+  </div>
+<div>
+    <%= e.range %>
+</div>
+<div>
+    <%= e.description %>
+</div>
+<hr/> 
+<% end %>
