@@ -1,6 +1,44 @@
-<ul>
-<% collection.where(status: "Open").each do | proj | %>
-  <li><%= link_to proj.name, contractors_project_path(proj) %></li>
-<% end %>
-</ul>
+<div id="projects" class="wrapper">
+     <div class="row header">
+         <div class="title">Projects</div>
+     </div>
+     <div class="body">
+         <%= render 'layouts/flash' %>
+        <% if collection.empty?  %>
+          <p>No projects added. Tap <%= link_to "Here", new_project_path() %> to begin creating a project</p>
+          <% else %>
+              <div class="project-list">
+                  <% collection.where(status: "Open").each do | proj | %>
+                    <%= link_to contractors_project_path(proj) do %>
+                      <div class="project-snapshot">
+                          <span class="project-thumbnail project-cell">
+                            <%= image_tag(proj.video.video_thumbnail)  %>
+                          </span>
+                          <span class="project-text project-cell">
+                              <div class="project-name"><%= proj.name %> </div>
+                              <div class="project-status ">
+                                  <span class="label">Status:</span>
+                                  <span class="status-status status-detail"><%= proj.status %></span>
+                                  <span class="status-dash status-detail">-</span>
+                                  <span class="status-number status-detail"><%= proj.estimates.count %></span>
+                                  <span class="status-text status-detail">Estimates</span>
+                              </div>
+                          </span>
+                          <span class="project-goto project-cell">
+                              <i class="fa fa-chevron-right"></i>
+                          </span>
+                      </div>
+                    <% end %>
+                   <% end %>
+              </div>
+         <% end %>
+     </div>
+     <div class="footer row">
+         <i class="tab fa fa-list-ul" data-screen="projects"></i>
+         <i class="tab fa fa-user" data-screen="profile"></i>
+     </div>
+ </div>
+
+
+
 
