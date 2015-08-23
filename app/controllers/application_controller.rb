@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   # an after login redirect
   def after_sign_in_path_for(resource)
     return contractors_root_path if resource.class.name.eql?('Contractor')
-    session.delete(:previous_url) || root_path
+    session.delete(:previous_url) || projects_path
   end
   
   
