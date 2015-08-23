@@ -1,22 +1,27 @@
 <ul>
-<li>Name: <%= resource.name %></li>
-<li>Description: <%= resource.description %></li>
+    <li>Name: <%= resource.name %></li>
+    <li>Description: <%= resource.description %></li>
 </ul>
 
 
 <br />
+
 Estimates
 <%= resource.estimates.count %> 
 
 <% resource.estimates.each do | e | %>
-  <div>
-  <%= e.contractor.name %>
-  </div>
-<div>
-    <%= e.range %>
-</div>
-<div>
-    <%= e.description %>
-</div>
-<hr/> 
+
+  <%= link_to estimate_path(e) do %>
+
+    <div>
+        <%= e.contractor.name %>
+    </div>
+    <div>
+        <%= e.range %>
+    </div>
+    <div>
+        <%= e.description %>
+    </div>
+    <hr/> 
+  <% end %>
 <% end %>

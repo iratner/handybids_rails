@@ -15,5 +15,10 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :projects
+  patch '/estimates/:id/accept' => 'estimates#accept', as: 'estimate_accept'
+  resources :estimates
+  
+  resources :projects do
+    
+  end
 end
