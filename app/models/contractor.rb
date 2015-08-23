@@ -1,5 +1,6 @@
 class Contractor < ActiveRecord::Base
   has_many :estimates
+  has_many :projects, :through => :estimates
   
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

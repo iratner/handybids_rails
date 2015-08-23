@@ -1,0 +1,6 @@
+<%= bootstrap_form_for [:contractors, :project, resource] do | f | %>
+  <%= f.hidden_field :project_id,  :value => params[:project_id] %>  
+  <%= f.text_field :range %>
+  <%= f.text_area :description %>
+  <%= f.submit 'Create Estimate' %>
+<% end %>
