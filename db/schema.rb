@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150822214153) do
+ActiveRecord::Schema.define(version: 20150823002138) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bids", force: :cascade do |t|
+    t.integer  "contracter_id"
+    t.integer  "amount"
+    t.text     "description"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
 
   create_table "contractors", force: :cascade do |t|
     t.string   "name"
@@ -38,11 +46,12 @@ ActiveRecord::Schema.define(version: 20150822214153) do
   add_index "contractors", ["reset_password_token"], name: "index_contractors_on_reset_password_token", unique: true, using: :btree
 
   create_table "estimates", force: :cascade do |t|
-    t.integer  "contracter_id"
+    t.integer  "contractor_id"
     t.text     "range"
     t.text     "description"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.integer  "project_id"
   end
 
   create_table "projects", force: :cascade do |t|
