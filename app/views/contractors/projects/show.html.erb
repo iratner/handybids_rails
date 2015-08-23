@@ -1,14 +1,26 @@
-<%= link_to "Return to project list", contractors_projects_path %>
 
-<%= link_to "Create Estimate", new_contractors_project_estimate_path(resource) %>
-  Name: <%= resource.name %>
-  Description: <%= resource.description %>
-  
-  <%= image_tag(resource.video.video_thumbnail) %>
-  <%= link_to "Video", resource.video.url %>
-  Status: <%= resource.status %>
-  Category: <%= resource.category %>
-  Urgency: <%= resource.urgency %>
-  Created: <%= resource.created_at %>
-  Last updated: <%= resource.updated_at %>
-<br />
+<div id="project-detail" class="wrapper">
+  <div class="row header">
+      <%= link_to "back", contractors_projects_path, :class => "cancel-btn" %>
+     <div class="title"><%= resource.name %></div>
+  </div>
+  <%= render 'layouts/flash' %>
+  <div class="project-snapshot">
+      <span class="project-thumbnail project-cell">
+          <%= link_to resource.video.url do %>
+            <%= image_tag(resource.video.video_thumbnail) %>
+          <% end %>
+      </span>
+      <span class="project-text project-cell">
+          <div class="project-name"><%= resource.name %> </div>
+          <div class="project-status ">
+              <span class="label">Status:</span>
+              <span class="status-status status-detail"><%= resource.status %></span>
+              <span class="status-dash status-detail">-</span>
+              <span class="status-number status-detail"><%= resource.estimates.count %></span>
+              <span class="status-text status-detail">Estimates</span>
+          </div>
+      </span>
+  </div>
+    
+    <%= link_to "Create Estimate", new_contractors_project_estimate_path(resource) %>
