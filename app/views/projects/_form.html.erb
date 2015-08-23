@@ -1,7 +1,32 @@
-<%= bootstrap_form_for resource do | f |%>
-  <%= f.file_field :video %>
-  <%= f.text_field :name %>
-  <%= f.text_field :category %>
-  <%= f.text_area :description, :rows => '5' %> 
-  <%= f.submit 'Add Project' %>
-<% end  %>
+<%= form_for resource do | f |%>
+     <div id="confirm-project" class="wrapper">
+         <div class="row header">
+             <span class="cancel-btn"></span><div class="title">My Project</div>
+         </div>
+         <div class="body">
+             <div class="project-media p-section">
+                 <h4>Media</h4>
+                 <%= f.file_field :video, :class => 'inactive' %>
+             </div>
+             <div class="project-name p-section">
+                 <h4>Project Name</h4>
+                 <%= f.text_field :name, :class => 'inactive' %>
+             </div>
+             <div class="project-category p-section">
+                 <h4>Project Category</h4>
+                  <%= f.text_field :category, :class => 'inactive' %>
+             </div>
+             <div class="project-description p-section">
+                 <h4>Project Description</h4>
+                 <%= f.text_area :description, :rows => '5', :class => 'inactive' %> 
+                 
+             </div>
+         </div>
+         <div class="footer row">
+              <%= f.submit 'Add Project' %>
+         </div>
+     </div>
+
+   </div>
+  
+  <% end  %>

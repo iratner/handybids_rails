@@ -1,10 +1,25 @@
-<%= link_to "Add new Project", new_project_path, :class => "btn btn-success pull-right" %>
-This is the projects list, 
-<br/><br/>
+<div id="projects" class="wrapper">
+     <div class="row header">
+         <div class="title">Projects</div>
+         <%= link_to new_project_path() do %>
+            <i class="add-button fa fa-plus"></i>
+         <% end %>
+     </div>
+     <div class="body">
+        <% if collection.empty?  %>
+          <p>No projects added. Tap + to begin creating a project</p>
+          <% else %>
+           <% collection.each do | proj | %>
+              <%= link_to proj.name, project_path(proj) %>
+           <% end %>
+         <% end %>
+     </div>
+     <div class="footer row">
+         <i class="tab fa fa-list-ul" data-screen="projects"></i>
+         <i class="tab fa fa-user" data-screen="profile"></i>
+     </div>
+ </div>
 
-<ul>
-<% collection.each do | proj | %>
-  <li><%= link_to proj.name, project_path(proj) %>&nbsp;(Estimates:&nbsp;<%= proj.estimates.count %>)</li>
-<% end %>
-</ul>
+
+
 
