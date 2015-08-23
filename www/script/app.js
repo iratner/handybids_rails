@@ -5,6 +5,9 @@
 $(document).ready(function() {
 
     $('.wrapper').css('height', window.innerHeight);
+    $(function() {
+        $( "#datepicker" ).datepicker();
+    });
 
 });
 

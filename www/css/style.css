@@ -253,6 +253,20 @@ body {
 
 .p-section h4 {
     font-size: .8em;
+    color: #097C94;
+}
+
+.p-section input.inactive,
+.p-section textarea.inactive{
+    width: 100%;
+    border: none;
+    color: #E2E2E2;
+}
+
+.p-section textarea {
+    height: 8em;
+    overflow: hidden;
+    resize: none;
 }
 
 .media-thumb {
@@ -260,4 +274,40 @@ body {
     height: 50px;
     display: inline-block;
     background-color: #EFDCDC;
+}
+
+#ui-datepicker-div {
+    position: absolute !important;
+    top: 25% !important;
+    background-color: whitesmoke;
+    width: 90%;
+    padding: 10px;
+    box-sizing: border-box;
+    left: 5% !important;
+    border: 1px dotted #E4DEDE;
+}
+
+.p-dropdown {
+    width: 100%;
+    border: none;
+    color: #19A4C1;
+}
+
+#confirm-project .footer.row {
+    background-color: #f4c170;
+    border: none;
+}
+
+#confirm-project .footer span {
+    width: 100%;
+    text-align: center;
+    padding-top: .8em;
+    color: white;
+}
+
+.cancel-btn {
+    position: absolute;
+    left: 10px;
+    color: white;
+    top: 1em;
 }

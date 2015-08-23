@@ -5,13 +5,18 @@
     <!--<meta http-equiv="refresh" content="30">-->
     <title></title>
     <script src="script/lib/jquery-1.11.3.min.js"></script>
+    <script src="script/lib/jquery-ui.min.js"></script>
     <script src="script/app.js"></script>
 
     <link rel="stylesheet" href="css/bootstrap.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href='http://fonts.googleapis.com/css?family=Belleza' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+
     <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/jquery-ui.structure.min.css"/>
+    <link rel="stylesheet" href="css/jquery-ui.theme.min.css"/>
+    <link rel="stylesheet" href="css/jquery-ui.min.css"/>
 
 </head>
 <body>
@@ -19,7 +24,7 @@
     <!---------------------------    Project Completion Screen   ----------------------------->
     <div id="confirm-project" class="wrapper">
         <div class="row header">
-            <span class="cancel-btn"></span><div class="title">My Project</div>
+            <span class="cancel-btn">cancel</span><div class="title">My Project</div>
         </div>
         <div class="body">
             <div class="project-media p-section">
@@ -28,7 +33,7 @@
             </div>
             <div class="project-name p-section">
                 <h4>Project Name</h4>
-                <input value="give this project a name"/>
+                <input class="inactive" value="give this project a name"/>
             </div>
             <div class="project-category p-section">
                 <h4>Project Category</h4>
@@ -39,11 +44,11 @@
             </div>
             <div class="project-timeframe p-section">
                 <h4>Project Timeframe</h4>
-                <input type="date"/>
+                <input  id="datepicker" class="inactive" type="text" value="mm/dd/yy"/>
             </div>
             <div class="project-description p-section">
                 <h4>Project Description</h4>
-                <textarea></textarea>
+                <textarea  class="inactive">describe this project with as much detail as you can. please be thorough to ensure a more accurate estimate from contractors</textarea>
             </div>
         </div>
         <div class="footer row">
