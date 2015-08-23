@@ -1,13 +1,7 @@
 class UserController < InheritedResources::Base
   
-  def create
-    build_resource
-    resource.status = 'Open'
- 
-    create! {collection_url}
-  end
+
   
-    
 #  protected
 #    def begin_of_association_chain
 #      current_user
@@ -15,6 +9,6 @@ class UserController < InheritedResources::Base
   
   private
     def permitted_params
-		params.permit(user: [:first_name, :last_name, :email])
+		params.permit(user: [:first_name, :last_name, :email, :avatar])
     end
 end
