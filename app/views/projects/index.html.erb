@@ -4,7 +4,7 @@ This is the projects list,
 
 <ul>
 <% collection.each do | proj | %>
-  <li><%= link_to proj.name, project_path(proj) %></li>
+  <li><%= link_to proj.name, project_path(proj) %>&nbsp;(Estimates:&nbsp;<%= proj.estimates.count %>)</li>
 <% end %>
 </ul>
 
