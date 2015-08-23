@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!--<meta http-equiv="refresh" content="30">-->
+    <title></title>
+    <script src="script/lib/jquery-1.11.3.min.js"></script>
+    <script src="script/app.js"></script>
+
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Belleza' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/style.css"/>
+
+</head>
+<body>
+
+<!---------------------------    Projects Screen   ----------------------------->
+<div id="projects" class="wrapper" style="display:none">
+    <div class="row header">
+        <div class="title">Projects</div><i class="add-button fa fa-plus"></i>
+    </div>
+    <div class="body">
+        <p>No projects added. Tap + to begin creating a project</p>
+    </div>
+    <div class="footer row">
+        <i class="tab fa fa-list-ul" data-screen="projects"></i>
+        <i class="tab fa fa-user" data-screen="profile"></i>
+    </div>
+</div>
+
+<!---------------------------    Project Completion Screen   ----------------------------->
+<div id="confirm-project" class="wrapper" style="display:none">
+    <div class="row header">
+        <span class="cancel-btn"></span><div class="title">My Project</div>
+    </div>
+    <div class="body">
+        <div class="project-media p-section">
+            <h4>Media</h4>
+            <span class="media-thumb"></span>
+        </div>
+        <div class="project-name p-section">
+            <h4>Project Name</h4>
+            <input value="give this project a name"/>
+        </div>
+        <div class="project-category p-section">
+            <h4>Project Category</h4>
+            <select class="p-dropdown">
+                <option value="Painting">Painting</option>
+                <option value="Drywall">Drywall</option>
+            </select>
+        </div>
+        <div class="project-timeframe p-section">
+            <h4>Project Timeframe</h4>
+            <input type="date"/>
+        </div>
+        <div class="project-description p-section">
+            <h4>Project Description</h4>
+            <textarea></textarea>
+        </div>
+    </div>
+    <div class="footer row">
+        <span>Submit Project</span>
+    </div>
+</div>
+
+<!---------------------------    Record Project Screen   ----------------------------->
+<div id="record-project" class="wrapper" style="display:none">
+    <div class="row header">
+        <div class="recording-wrapper">
+            <div class="title">Continue Recording your video</div>
+            <div class="progress-bar-wrapper">
+                <span class="progress-bar"></span>
+            </div>
+        </div>
+    </div>
+    <div class="body">
+        <!--<div class="record-btn-wrapper bottom-content">-->
+            <!--<span class="record-btn off">-->
+                <!--<span class="record-btn-inner"></span>-->
+            <!--</span>-->
+        <!--</div>-->
+        <div class="bottom-content">
+            <div class="confirm-recording">
+                <h3>Are you happy with this recording</h3>
+                <div class="confirm-recording-btns">
+                    <span class="confirm">Yes</span>
+                    <span class="reject">No</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!---------------------------    Login Screen   ----------------------------->
+<div id="login" class="wrapper" style="display:none">
+    <img src="images/splash-background.jpg" class="splash"/>
+    <div class="body">
+        <div class="handybid-name">Handybid</div>
+        <div class="login-wrapper">
+            <input class="username login-input" value="username"/>
+            <input class="password login-input" value="password"/>
+            <input type="submit" class="login-input" val="submit"/>
+            <div class="sign-up login-input">
+                <span>Sign Up</span>
+                <span>Forgot Password</span>
+            </div>
+        </div>
+    </div>
+    <!--<div class="footer row">-->
+    <!--<span class="tab">Projects</span>-->
+    <!--<span class="tab">Account</span>-->
+    <!--</div>-->
+</div>
+
+
+
+<!---------------------------    Splash Screen   ----------------------------->
+
+<div id="splash" class="wrapper" >
+   <img src="images/splash-background.jpg" class="splash"/>
+    <div class="body">
+        <h1 class="handybid-name">Handybid</h1>
+    </div>
+</div>
+
+
+
+
+<div class="view-selector" style="z-index: 3">
+    <span class="switch-view" data-view="login">login</span>
+    <span class="switch-view" data-view="projects">projects</span>
+    <span class="switch-view" data-view="splash">splash</span>
+    <span class="switch-view" data-view="record-project">record-project</span>
+    <span class="switch-view" data-view="confirm-project">confirm-project</span>
+
+</div>
+
+</body>
+</html>
