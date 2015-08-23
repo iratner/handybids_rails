@@ -4,6 +4,7 @@ class EstimatesController < InheritedResources::Base
   def accept
     resource.project.accepted_estimate = resource
     resource.project.status = "In Progress"
+    resource.project.save
     flash[:success] = "Estimate succesfully accepted!"
     redirect_to projects_path
   end

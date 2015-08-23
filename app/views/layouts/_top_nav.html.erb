@@ -1,9 +1,9 @@
 <% if current_user.present? %>
   Welcome, <%= "[#{current_user.email}]" %>
-  <%= link_to "Sign Out", destroy_user_session_path, method: "delete" %>
+  <%= link_to "Sign Out", destroy_user_session_path, method: "delete", :class => "pull-right" %>
 <% end %>
 <% if current_contractor.present? %>
   Welcome, <%= "[#{current_contractor.email}]" %>
-  <%= link_to "Sign Out", destroy_contractor_session_path, method: "delete" %>
+  <%= link_to "Sign Out", destroy_contractor_session_path, method: "delete", :class => "pull-right" %>
 <% end %>
 <br />
