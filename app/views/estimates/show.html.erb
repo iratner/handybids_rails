@@ -1,0 +1,12 @@
+<div>
+    <%= resource.contractor.name %>
+</div>
+<div>
+    <%= resource.range %>
+</div>
+<div>
+    <%= resource.description %>
+</div>
+<hr/> 
+
+<%= link_to 'Accept This Estimate', estimate_accept_path(resource), :method => :patch %>

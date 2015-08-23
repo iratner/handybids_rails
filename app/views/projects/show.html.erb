@@ -7,6 +7,7 @@ Project details:
 <br/><br/>
 
 <ul>
+
 <li>Name: <%= resource.name %></li>
 <li>Description: <%= resource.description %></li>
 <li><%= link_to "Video", resource.video.url %></li>
@@ -15,23 +16,29 @@ Project details:
 <li>Urgency: <%= resource.urgency %></li>
 <li>Created: <%= resource.created_at %></li>
 <li>Last updated: <%= resource.updated_at %></li>
+
 </ul>
 
 <%= link_to "Delete Project", project_path, method: "delete", :class => "btn btn-success pull-right" %>
 
 <br />
+
 Estimates
 <%= resource.estimates.count %> 
 
 <% resource.estimates.each do | e | %>
-  <div>
-  <%= e.contractor.name %>
-  </div>
-<div>
-    <%= e.range %>
-</div>
-<div>
-    <%= e.description %>
-</div>
-<hr/> 
+
+  <%= link_to estimate_path(e) do %>
+
+    <div>
+        <%= e.contractor.name %>
+    </div>
+    <div>
+        <%= e.range %>
+    </div>
+    <div>
+        <%= e.description %>
+    </div>
+    <hr/> 
+  <% end %>
 <% end %>
